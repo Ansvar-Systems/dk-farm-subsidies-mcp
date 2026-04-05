@@ -2,5 +2,15 @@
   "mcp_name": "Denmark Farm Subsidies MCP",
   "jurisdiction": "DK",
   "build_date": "2026-04-05",
-  "status": "template — data not yet populated"
+  "status": "populated",
+  "schemes": 12,
+  "scheme_options": 12,
+  "cross_compliance_requirements": 9,
+  "fts_entries": 36,
+  "data_sources": [
+    "Landbrugsstyrelsen (lbst.dk)",
+    "CAP Strategisk Plan 2023-2027 for Danmark",
+    "EU-Kommissionen"
+  ],
+  "disclaimer": "Oplysningerne er vejledende. Kontakt Landbrugsstyrelsen eller din landbrugsraadgiver for aktuel information om stoettemuligheder og ansogningsfrister."
 }

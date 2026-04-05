@@ -25,7 +25,7 @@ export function handleGetCrossCompliance(db: Database, args: CrossComplianceArgs
       return { error: 'not_found', message: `Requirement '${args.requirement_id}' not found.` };
     }
 
-    return { ...req, _meta: buildMeta({ source_url: 'https://www.gov.uk/guidance/cross-compliance' }) };
+    return { ...req, _meta: buildMeta({ source_url: 'https://lbst.dk/tilskud-selvbetjening/konditionalitet/' }) };
   }
 
   if (args.topic) {
@@ -45,7 +45,7 @@ export function handleGetCrossCompliance(db: Database, args: CrossComplianceArgs
       jurisdiction: jv.jurisdiction,
       results_count: results.length,
       results,
-      _meta: buildMeta({ source_url: 'https://www.gov.uk/guidance/cross-compliance' }),
+      _meta: buildMeta({ source_url: 'https://lbst.dk/tilskud-selvbetjening/konditionalitet/' }),
     };
   }
 

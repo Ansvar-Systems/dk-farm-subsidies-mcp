@@ -1,6 +1,6 @@
 {
   "name": "@ansvar-systems/dk-farm-subsidies-mcp",
-  "mcpName": "io.github.ansvar-systems/uk-farm-subsidies",
+  "mcpName": "io.github.ansvar-systems/dk-farm-subsidies",
   "version": "0.1.0",
   "description": "MCP server for Danish farm subsidies \u2014 grundbetaling, eco-ordninger, GLM-krav, F\u00e6llesskema",
   "type": "module",
@@ -29,10 +29,11 @@
     "mcp",
     "agriculture",
     "subsidies",
-    "sfi",
     "farming",
-    "defra",
-    "rpa"
+    "denmark",
+    "landbrugsstyrelsen",
+    "cap",
+    "grundbetaling"
   ],
   "author": "Ansvar Systems <info@ansvar.eu>",
   "license": "Apache-2.0",

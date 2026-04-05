@@ -40,13 +40,13 @@ const TOOLS = [
   },
   {
     name: 'search_schemes',
-    description: 'Search farm subsidy schemes, SFI options, and application guidance. Use for broad queries about available schemes.',
+    description: 'Search Danish farm subsidy schemes, eco-ordninger, and application guidance. Use for broad queries about available schemes.',
     inputSchema: {
       type: 'object' as const,
       properties: {
         query: { type: 'string', description: 'Free-text search query' },
-        scheme_type: { type: 'string', description: 'Filter by scheme type (e.g. agri-environment, countryside-stewardship)' },
-        jurisdiction: { type: 'string', description: 'ISO 3166-1 alpha-2 code (default: GB)' },
+        scheme_type: { type: 'string', description: 'Filter by scheme type (e.g. direct_payment, eco_scheme, agri_environment, investment)' },
+        jurisdiction: { type: 'string', description: 'ISO 3166-1 alpha-2 code (default: DK)' },
         limit: { type: 'number', description: 'Max results (default: 20, max: 50)' },
       },
       required: ['query'],
@@ -58,8 +58,8 @@ const TOOLS = [
     inputSchema: {
       type: 'object' as const,
       properties: {
-        scheme_id: { type: 'string', description: 'Scheme ID (e.g. sustainable-farming-incentive)' },
-        jurisdiction: { type: 'string', description: 'ISO 3166-1 alpha-2 code (default: GB)' },
+        scheme_id: { type: 'string', description: 'Scheme ID (e.g. grundbetaling, eco-biodiversitet)' },
+        jurisdiction: { type: 'string', description: 'ISO 3166-1 alpha-2 code (default: DK)' },
       },
       required: ['scheme_id'],
     },
@@ -72,7 +72,7 @@ const TOOLS = [
       properties: {
         scheme_id: { type: 'string', description: 'Scheme ID' },
         option_id: { type: 'string', description: 'Specific option ID to filter to' },
-        jurisdiction: { type: 'string', description: 'ISO 3166-1 alpha-2 code (default: GB)' },
+        jurisdiction: { type: 'string', description: 'ISO 3166-1 alpha-2 code (default: DK)' },
       },
       required: ['scheme_id'],
     },
@@ -83,10 +83,10 @@ const TOOLS = [
     inputSchema: {
       type: 'object' as const,
       properties: {
-        land_type: { type: 'string', description: 'Land type (e.g. arable, grassland, moorland)' },
-        current_practice: { type: 'string', description: 'Current farming practice (e.g. cover cropping, soil testing)' },
-        farm_type: { type: 'string', description: 'Farm type (e.g. mixed, arable, livestock)' },
-        jurisdiction: { type: 'string', description: 'ISO 3166-1 alpha-2 code (default: GB)' },
+        land_type: { type: 'string', description: 'Land type (e.g. omdriftsareal, permanent graes, naturarealer)' },
+        current_practice: { type: 'string', description: 'Current farming practice (e.g. oekologisk, afgraesning, sprojtning)' },
+        farm_type: { type: 'string', description: 'Farm type (e.g. planteavl, kvaegbrug, blandbrug)' },
+        jurisdiction: { type: 'string', description: 'ISO 3166-1 alpha-2 code (default: DK)' },
       },
     },
   },
@@ -97,20 +97,20 @@ const TOOLS = [
       type: 'object' as const,
       properties: {
         scheme_id: { type: 'string', description: 'Scheme ID' },
-        jurisdiction: { type: 'string', description: 'ISO 3166-1 alpha-2 code (default: GB)' },
+        jurisdiction: { type: 'string', description: 'ISO 3166-1 alpha-2 code (default: DK)' },
       },
       required: ['scheme_id'],
     },
   },
   {
     name: 'get_cross_compliance',
-    description: 'Get cross-compliance requirements (GAEC/SMR) by ID or topic.',
+    description: 'Get GLM-krav (GAEC conditionality) requirements by ID or topic.',
     inputSchema: {
       type: 'object' as const,
       properties: {
-        requirement_id: { type: 'string', description: 'Requirement ID (e.g. gaec-1, smr-1)' },
-        topic: { type: 'string', description: 'Search topic (e.g. buffer strips, water pollution)' },
-        jurisdiction: { type: 'string', description: 'ISO 3166-1 alpha-2 code (default: GB)' },
+        requirement_id: { type: 'string', description: 'Requirement ID (e.g. glm-1, glm-8)' },
+        topic: { type: 'string', description: 'Search topic (e.g. braemmer, saedskifte, permanent graes)' },
+        jurisdiction: { type: 'string', description: 'ISO 3166-1 alpha-2 code (default: DK)' },
       },
     },
   },
@@ -121,7 +121,7 @@ const TOOLS = [
       type: 'object' as const,
       properties: {
         query: { type: 'string', description: 'Free-text search query' },
-        jurisdiction: { type: 'string', description: 'ISO 3166-1 alpha-2 code (default: GB)' },
+        jurisdiction: { type: 'string', description: 'ISO 3166-1 alpha-2 code (default: DK)' },
         limit: { type: 'number', description: 'Max results (default: 20, max: 50)' },
       },
       required: ['query'],

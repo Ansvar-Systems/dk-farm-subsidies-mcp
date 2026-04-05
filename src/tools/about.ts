@@ -5,11 +5,16 @@ export function handleAbout() {
   return {
     name: 'Denmark Farm Subsidies MCP',
     description:
-      'UK farm subsidy schemes -- Sustainable Farming Incentive (SFI) options, eligibility criteria, ' +
-      'payment rates, and cross-compliance requirements (GAEC/SMR). Based on DEFRA and RPA publications.',
+      'Danish farm subsidy schemes — grundbetaling, eco-ordninger, agri-environment tilskud, ' +
+      'investeringsstøtte, GLM-krav (GAEC/konditionalitet), and Fællesskema guidance. ' +
+      'Based on Landbrugsstyrelsen publications and the CAP Strategic Plan 2023-2027 for Denmark.',
     version: '0.1.0',
     jurisdiction: [...SUPPORTED_JURISDICTIONS],
-    data_sources: ['DEFRA SFI Guidance', 'RPA Scheme Manuals', 'Cross-compliance GAEC/SMR'],
+    data_sources: [
+      'Landbrugsstyrelsen (lbst.dk)',
+      'CAP Strategisk Plan 2023-2027 for Danmark',
+      'EU-Kommissionen',
+    ],
     tools_count: 10,
     links: {
       homepage: 'https://ansvar.eu/open-agriculture',
