@@ -1,4 +1,5 @@
 import { buildMeta } from '../metadata.js';
+import { buildCitation } from '../citation.js';
 import { validateJurisdiction } from '../jurisdiction.js';
 import type { Database } from '../db.js';
 
@@ -25,7 +26,17 @@ export function handleGetCrossCompliance(db: Database, args: CrossComplianceArgs
       return { error: 'not_found', message: `Requirement '${args.requirement_id}' not found.` };
     }
 
-    return { ...req, _meta: buildMeta({ source_url: 'https://lbst.dk/tilskud-selvbetjening/konditionalitet/' }) };
+    return {
+      ...req,
+      _meta: buildMeta({ source_url: 'https://lbst.dk/tilskud-selvbetjening/konditionalitet/' }),
+      _citation: buildCitation(
+        req.id,
+        `${req.requirement} (${req.id})`,
+        'get_cross_compliance',
+        { requirement_id: args.requirement_id! },
+        'https://lbst.dk/tilskud-selvbetjening/konditionalitet/',
+      ),
+    };
   }
 
   if (args.topic) {
@@ -46,6 +57,13 @@ export function handleGetCrossCompliance(db: Database, args: CrossComplianceArgs
       results_count: results.length,
       results,
       _meta: buildMeta({ source_url: 'https://lbst.dk/tilskud-selvbetjening/konditionalitet/' }),
+      _citation: buildCitation(
+        `cross-compliance:${args.topic}`,
+        `Cross-compliance: ${args.topic}`,
+        'get_cross_compliance',
+        { topic: args.topic! },
+        'https://lbst.dk/tilskud-selvbetjening/konditionalitet/',
+      ),
     };
   }
 
@@ -63,5 +81,12 @@ export function handleGetCrossCompliance(db: Database, args: CrossComplianceArgs
     results_count: all.length,
     results: all,
     _meta: buildMeta({ source_url: 'https://www.gov.uk/guidance/cross-compliance' }),
+    _citation: buildCitation(
+      'cross-compliance:all',
+      'Cross-compliance requirements',
+      'get_cross_compliance',
+      {},
+      'https://lbst.dk/tilskud-selvbetjening/konditionalitet/',
+    ),
   };
 }
